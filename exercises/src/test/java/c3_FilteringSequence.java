@@ -54,7 +54,7 @@ public class c3_FilteringSequence extends FilteringSequenceBase {
     @Test
     public void economical() {
         Flux<String> items = duplicated_records_service()
-                .distinct()//todo: change this line only, use only one operator
+                .distinct()
                 ;
 
         StepVerifier.create(items)
@@ -85,7 +85,7 @@ public class c3_FilteringSequence extends FilteringSequenceBase {
     @Test
     public void dont_take_more_then_you_need() {
         Flux<Integer> numbers = number_service()
-                .take(100)//todo: change this line only
+                .take(100)
                 ;
 
         StepVerifier.create(numbers)
@@ -99,7 +99,7 @@ public class c3_FilteringSequence extends FilteringSequenceBase {
     @Test
     public void not_a_binary_search() {
         Flux<Integer> numbers = number_service()
-                .takeLast(100)//todo: change this line only
+                .takeLast(100)
                 ;
 
         StepVerifier.create(numbers)
@@ -115,7 +115,7 @@ public class c3_FilteringSequence extends FilteringSequenceBase {
     public void golden_middle() {
         Flux<Integer> numbers = number_service()
                 .skip(100)
-                .take(100)//todo: do your changes here
+                .take(100)
                 ;
 
         StepVerifier.create(numbers)
