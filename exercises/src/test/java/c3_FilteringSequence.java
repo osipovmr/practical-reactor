@@ -41,7 +41,7 @@ public class c3_FilteringSequence extends FilteringSequenceBase {
     @Test
     public void needle_in_a_haystack() {
         Flux<String> strings = mashed_data_service()
-                .flatMap(obj -> obj instanceof String ? Flux.just((String) obj) : Flux.empty());
+                .ofType(String.class);
 
         StepVerifier.create(strings)
                     .expectNext("1", "String.class")
